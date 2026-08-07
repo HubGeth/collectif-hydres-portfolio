@@ -2,3 +2,4 @@ node_modules/
 dist/
 .env
 VIDEOS/
+.DS_Store
