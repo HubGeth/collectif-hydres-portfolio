@@ -24,9 +24,15 @@ jobs:
           OVH_USERNAME: ${{ secrets.OVH_USERNAME }}
           OVH_PASSWORD: ${{ secrets.OVH_PASSWORD }}
         run: |
-          lftp -e "
-          set sftp:auto-confirm yes;
-          open -u \"$OVH_USERNAME\",\"$OVH_PASSWORD\" sftp://$OVH_HOST;
-          mirror --reverse --delete --verbose WEBSITE/ www/;
+          lftp <<EOF
+          set cmd:trace yes
+          set net:timeout 20
+          set net:max-retries 2
+          set sftp:auto-confirm yes
+          open -p 22 -u "$OVH_USERNAME","$OVH_PASSWORD" sftp://$OVH_HOST
+          pwd
+          ls
+          cd www
+          mirror --reverse --delete --verbose WEBSITE/ .
           bye
-          "
+          EOF
