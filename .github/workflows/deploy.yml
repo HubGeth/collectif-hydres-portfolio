@@ -1,0 +1,32 @@
+name: Deploy to OVH
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install lftp
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lftp
+
+      - name: Deploy WEBSITE to OVH
+        env:
+          OVH_HOST: ${{ secrets.OVH_HOST }}
+          OVH_USERNAME: ${{ secrets.OVH_USERNAME }}
+          OVH_PASSWORD: ${{ secrets.OVH_PASSWORD }}
+        run: |
+          lftp -e "
+          set sftp:auto-confirm yes;
+          open -u \"$OVH_USERNAME\",\"$OVH_PASSWORD\" sftp://$OVH_HOST;
+          mirror --reverse --delete --verbose WEBSITE/ www/;
+          bye
+          "
