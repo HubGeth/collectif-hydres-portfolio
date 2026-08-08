@@ -1,5 +1,9 @@
 // Collectif Hydres — comportements globaux (aucune dépendance)
 
+// Sécurité : le contenu reste visible si le JS échoue avant d'avoir pu
+// observer les .reveal (voir règle .js-reveal .reveal dans style.css).
+document.documentElement.classList.add('js-reveal');
+
 // En-tête : fond plein dès qu'on quitte le haut de page
 const header = document.querySelector('.site-header');
 if (header && !header.classList.contains('is-solid')) {
