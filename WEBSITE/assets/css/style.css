@@ -139,6 +139,14 @@ h3{ font-size:clamp(1.3rem,2.4vw,1.7rem); margin-bottom:.4em; }
 .tag--rust{ background:var(--rust); color:var(--white); }
 .tag--outline{ background:transparent; border:1px solid currentColor; }
 
+/* ---- Logos partenaires ------------------------------------------------------ */
+.partner-logos{ display:flex; flex-wrap:wrap; gap:.9rem; align-items:center; }
+.partner-logos .logo-card{
+  display:flex; align-items:center; justify-content:center;
+  height:64px; padding:.6rem 1.1rem; background:var(--white); border-radius:4px;
+}
+.partner-logos .logo-card img{ max-height:100%; max-width:130px; width:auto; height:auto; object-fit:contain; }
+
 /* ---- En-tête / bandeau ---------------------------------------------------- */
 .site-header{
   position:fixed; inset-inline:0; top:0; z-index:100;
