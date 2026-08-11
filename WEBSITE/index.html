@@ -46,7 +46,13 @@
 <nav class="nav-mobile" aria-hidden="true">
   <a href="index.html" class="is-active">Accueil</a>
   <a href="collectif.html">Le collectif</a>
-  <a href="creations.html">Créations</a>
+  <div class="nav-mobile-item">
+    <button class="nav-mobile-toggle" aria-expanded="false">Créations</button>
+    <div class="nav-mobile-sub">
+      <a href="creations/geschwister.html">Geschwister</a>
+      <a href="creations/torann.html">Torann</a>
+    </div>
+  </div>
   <a href="mediation.html">Médiation</a>
   <a href="agenda.html">Agenda</a>
   <a href="contact.html">Contact</a>
@@ -128,6 +134,7 @@
   <div class="strip container mt-lg reveal">
     <img class="ph" src="assets/img/insitu-1.jpg" alt="Performance devant la cathédrale de Rouen">
     <img class="ph" src="assets/img/insitu-2.jpg" alt="Performance in-situ à la galerie Kiff&Marais, Paris">
+      <img class="ph" src="assets/img/insitu-3.jpg" alt="Performance au festival Aubeterre Danse">
   </div>
 </section>
 
@@ -190,9 +197,9 @@
       <a class="btn btn-ghost-light" href="https://www.instagram.com/hydres_collectif/" target="_blank" rel="noopener">Suivre le collectif →</a>
     </div>
     <div class="grid grid-3 mt-lg reveal" style="gap:.6rem;">
-      <div class="card-photo" style="aspect-ratio:1;"><img class="ph" src="assets/img/collectif-editorial.jpg" alt=""></div>
-      <div class="card-photo" style="aspect-ratio:1;"><img class="ph" src="assets/img/mediation-alt.jpg" alt=""></div>
-      <div class="card-photo" style="aspect-ratio:1;"><img class="ph" src="assets/img/torann-alt1.jpg" alt=""></div>
+      <a class="card-photo" style="aspect-ratio:1;" href="#collectif" aria-label="Le collectif"><img class="ph" src="assets/img/collectif-editorial.jpg" alt=""></a>
+      <a class="card-photo" style="aspect-ratio:1;" href="creations/geschwister.html" aria-label="Geschwister"><img class="ph" src="assets/img/mediation-alt.jpg" alt=""></a>
+      <a class="card-photo" style="aspect-ratio:1;" href="creations/torann.html" aria-label="Torann"><img class="ph" src="assets/img/torann-alt1.jpg" alt=""></a>
     </div>
   </div>
 </section>

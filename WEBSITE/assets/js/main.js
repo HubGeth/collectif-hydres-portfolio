@@ -29,6 +29,15 @@ if (toggle && mobileNav) {
   );
 }
 
+// Sous-menu Créations (tap pour déplier, mobile)
+document.querySelectorAll('.nav-mobile-toggle').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const sub = btn.nextElementSibling;
+    const open = sub.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', String(open));
+  });
+});
+
 // Apparitions au scroll
 const revealEls = document.querySelectorAll('.reveal');
 if (revealEls.length && 'IntersectionObserver' in window) {
