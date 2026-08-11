@@ -160,8 +160,8 @@ h3{ font-size:clamp(1.3rem,2.4vw,1.7rem); margin-bottom:.4em; }
   box-shadow:0 6px 24px rgba(0,0,0,.18);
 }
 .site-header .logo{ display:flex; align-items:center; gap:.6em; }
-.site-header .logo img{ height:34px; width:auto; filter:none; }
-.site-header .logo span{ font-family:var(--font-display); color:var(--white); font-size:1.15rem; letter-spacing:.05em; }
+.site-header .logo img{ height:48px; width:auto; filter:none; }
+.site-header .logo span{ font-family:var(--font-display); color:var(--white); font-size:1.3rem; letter-spacing:.05em; }
 
 .nav{ display:flex; align-items:center; gap:2.2rem; }
 .nav-links{ display:none; gap:1.8rem; align-items:center; }
@@ -176,6 +176,17 @@ h3{ font-size:clamp(1.3rem,2.4vw,1.7rem); margin-bottom:.4em; }
 .nav-links a:hover::after,.nav-links a.is-active::after{ right:0; }
 .nav-links a.is-active{ color:var(--brand); }
 @media (min-width:920px){ .nav-links{ display:flex; } }
+
+.nav-item{ position:relative; }
+.nav-dropdown{
+  position:absolute; top:100%; left:0; padding-top:.9rem;
+  opacity:0; visibility:hidden; transform:translateY(-6px);
+  transition:opacity .2s var(--ease), transform .2s var(--ease), visibility .2s;
+}
+.nav-item:hover .nav-dropdown, .nav-item:focus-within .nav-dropdown{ opacity:1; visibility:visible; transform:none; }
+.nav-dropdown-inner{ display:flex; flex-direction:column; min-width:150px; background:var(--ink); box-shadow:0 12px 24px rgba(0,0,0,.3); }
+.nav-dropdown-inner a{ padding:.7em 1.1em; font-size:.78rem; white-space:nowrap; }
+.nav-dropdown-inner a:hover{ background:var(--ink-soft); color:var(--brand); }
 
 .nav-social{ display:flex; gap:.9rem; }
 .nav-social a{ color:var(--white); opacity:.75; }
@@ -288,6 +299,8 @@ h3{ font-size:clamp(1.3rem,2.4vw,1.7rem); margin-bottom:.4em; }
   border-top:1px solid rgba(255,255,255,.14); padding-top:1.4rem;
   display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between; font-size:.78rem; opacity:.55;
 }
+.footer-credits{ display:flex; flex-direction:column; gap:.35rem; text-align:right; }
+.footer-credits a:hover{ color:var(--brand); text-decoration:underline; }
 
 /* ---- Reveal on scroll --------------------------------------------------------- */
 .reveal{ transition:opacity .7s var(--ease), transform .7s var(--ease); }
