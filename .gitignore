@@ -2,4 +2,7 @@ node_modules/
 dist/
 .env
 VIDEOS/
+PHOTOS/
+LOGOS/
+DOSSIERS/
 .DS_Store
