@@ -160,8 +160,8 @@ h3{ font-size:clamp(1.3rem,2.4vw,1.7rem); margin-bottom:.4em; }
   box-shadow:0 6px 24px rgba(0,0,0,.18);
 }
 .site-header .logo{ display:flex; align-items:center; gap:.6em; }
-.site-header .logo img{ height:48px; width:auto; filter:none; }
-.site-header .logo span{ font-family:var(--font-display); color:var(--white); font-size:1.3rem; letter-spacing:.05em; }
+.site-header .logo img{ height:60px; width:auto; filter:none; }
+.site-header .logo span{ font-family:var(--font-display); color:var(--white); font-size:1.45rem; letter-spacing:.05em; }
 
 .nav{ display:flex; align-items:center; gap:2.2rem; }
 .nav-links{ display:none; gap:1.8rem; align-items:center; }
@@ -177,7 +177,7 @@ h3{ font-size:clamp(1.3rem,2.4vw,1.7rem); margin-bottom:.4em; }
 .nav-links a.is-active{ color:var(--brand); }
 @media (min-width:920px){ .nav-links{ display:flex; } }
 
-.nav-item{ position:relative; }
+.nav-item{ position:relative; display:flex; align-items:center; }
 .nav-dropdown{
   position:absolute; top:100%; left:0; padding-top:.9rem;
   opacity:0; visibility:hidden; transform:translateY(-6px);
@@ -267,6 +267,8 @@ h3{ font-size:clamp(1.3rem,2.4vw,1.7rem); margin-bottom:.4em; }
 }
 .page-hero .hero-media img{ filter:grayscale(.7) contrast(1.05) brightness(.6); }
 .page-hero .hero-content{ padding-block:clamp(6rem,14vw,9rem) clamp(2.5rem,6vw,3.5rem); }
+/* Desktop : bandeau plus haut, les photos sources sont trop tassées en 56vh sur les écrans larges */
+@media (min-width:900px){ .page-hero{ min-height:72vh; } }
 
 /* ---- Grilles / cartes ------------------------------------------------------- */
 .grid{ display:grid; gap:clamp(1.5rem,3vw,2.5rem); }
