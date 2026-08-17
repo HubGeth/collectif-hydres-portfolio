@@ -330,7 +330,7 @@ h3{ font-size:clamp(1.3rem,2.4vw,1.7rem); margin-bottom:.4em; }
   display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between; font-size:.78rem; opacity:.55;
 }
 .footer-credits{ display:flex; flex-direction:column; gap:.35rem; text-align:right; }
-.footer-credits a:hover{ color:var(--brand); text-decoration:underline; }
+.footer-bottom a:hover{ color:var(--brand); text-decoration:underline; }
 
 /* ---- Reveal on scroll --------------------------------------------------------- */
 .reveal{ transition:opacity .7s var(--ease), transform .7s var(--ease); }
