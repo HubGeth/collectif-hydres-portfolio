@@ -163,8 +163,8 @@ h3{ font-size:clamp(1.3rem,2.4vw,1.7rem); margin-bottom:.4em; }
 .site-header .logo img{ height:92px; width:auto; filter:none; }
 .site-header .logo span{ font-family:var(--font-display); color:var(--white); font-size:2.1rem; letter-spacing:.05em; }
 @media (max-width:919px){
-  .site-header .logo img{ height:44px; }
-  .site-header .logo span{ font-size:1.3rem; }
+  .site-header .logo img{ height:30px; }
+  .site-header .logo span{ font-size:1rem; }
 }
 
 .nav{ display:flex; align-items:center; gap:2.2rem; }
