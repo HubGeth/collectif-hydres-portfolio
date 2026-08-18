@@ -327,9 +327,10 @@ h3{ font-size:clamp(1.3rem,2.4vw,1.7rem); margin-bottom:.4em; }
 .footer-social{ display:flex; gap:1rem; margin-top:1rem; }
 .footer-bottom{
   border-top:1px solid rgba(255,255,255,.14); padding-top:1.4rem;
-  display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between; font-size:.78rem; opacity:.55;
+  display:grid; grid-template-columns:1fr auto auto;
+  row-gap:.6rem; column-gap:1.25rem; font-size:.78rem; opacity:.55; text-align:right;
 }
-.footer-credits{ display:flex; flex-basis:100%; flex-wrap:nowrap; justify-content:center; gap:2.5rem; text-align:center; margin-top:1.8rem; }
+.footer-bottom > :nth-child(1), .footer-bottom > :nth-child(4){ text-align:left; }
 .footer-bottom a:hover{ color:var(--brand); text-decoration:underline; }
 
 /* ---- Reveal on scroll --------------------------------------------------------- */
