@@ -4,7 +4,9 @@
   const escape = value => String(value || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
   const field = (item, name) => local === 'en' ? (item[`${name}En`] || item[`${name}Fr`] || '') : (item[`${name}Fr`] || '');
   const creationUrl = item => (item.legacy || ['geschwister', 'torann'].includes(item.slug)) ? `${root}creations/${item.slug}.html` : `${root}creation.html?slug=${encodeURIComponent(item.slug)}`;
-  const card = item => `<a class="card reveal" href="${creationUrl(item)}" style="background:transparent;"><div class="card-photo"><img class="ph" src="${escape(item.hero)}" alt="${escape(field(item,'title'))}"></div><div class="card-body"><div class="card-meta"><span class="meta">${escape(field(item,'meta'))}</span></div><h3>${escape(field(item,'title'))}</h3><p style="opacity:.75;">${escape(field(item,'intro'))}</p></div></a>`;
+  // Ces cartes sont injectées après l'initialisation de l'animation reveal :
+  // ne pas leur appliquer cette classe, sinon elles restent invisibles.
+  const card = item => `<a class="card" href="${creationUrl(item)}" style="background:transparent;"><div class="card-photo"><img class="ph" src="${escape(item.hero)}" alt="${escape(field(item,'title'))}"></div><div class="card-body"><div class="card-meta"><span class="meta">${escape(field(item,'meta'))}</span></div><h3>${escape(field(item,'title'))}</h3><p style="opacity:.75;">${escape(field(item,'intro'))}</p></div></a>`;
   fetch('/api/index.php?action=public-content').then(r => r.ok ? r.json() : Promise.reject()).then(data => {
     if (data.creations.length) document.querySelectorAll('[data-creations-list]').forEach(node => node.innerHTML = data.creations.map(card).join(''));
     document.querySelectorAll('[data-creations-nav]').forEach(node => {
