@@ -38,6 +38,23 @@ document.querySelectorAll('.nav-mobile-toggle').forEach(btn => {
   });
 });
 
+// Les créations ajoutées dans l’administration alimentent aussi les sous-menus
+// de toutes les pages, y compris les anciennes fiches statiques.
+fetch('/api/index.php?action=public-content')
+  .then(response => response.ok ? response.json() : Promise.reject())
+  .then(({ creations }) => {
+    const base = location.pathname.includes('/creations/') ? '../' : '';
+    document.querySelectorAll('.nav-dropdown-inner, .nav-mobile-sub').forEach(menu => {
+      menu.replaceChildren(...creations.map(creation => {
+        const link = document.createElement('a');
+        link.href = `${base}creation.html?slug=${encodeURIComponent(creation.slug)}`;
+        link.textContent = document.documentElement.lang === 'en' ? (creation.titleEn || creation.titleFr) : creation.titleFr;
+        return link;
+      }));
+    });
+  })
+  .catch(() => {});
+
 // Apparitions au scroll
 const revealEls = document.querySelectorAll('.reveal');
 if (revealEls.length && 'IntersectionObserver' in window) {

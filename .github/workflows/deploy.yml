@@ -33,6 +33,8 @@ jobs:
           pwd
           ls
           cd www
-          mirror --reverse --delete --verbose WEBSITE/ .
+          # Les photos téléversées depuis /admin vivent sur le serveur : ne pas
+          # les supprimer lors d'un déploiement du site.
+          mirror --reverse --delete --exclude-glob uploads/** --verbose WEBSITE/ .
           bye
           EOF

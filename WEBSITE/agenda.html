@@ -24,7 +24,7 @@
       <a href="collectif.html">Le collectif</a>
       <div class="nav-item">
         <a href="creations.html">Créations</a>
-        <div class="nav-dropdown"><div class="nav-dropdown-inner">
+        <div class="nav-dropdown"><div class="nav-dropdown-inner" data-creations-nav>
           <a href="creations/geschwister.html">Geschwister</a>
           <a href="creations/torann.html">Torann</a>
         </div></div>
@@ -48,7 +48,7 @@
   <a href="collectif.html">Le collectif</a>
   <div class="nav-mobile-item">
     <button class="nav-mobile-toggle" aria-expanded="false">Créations</button>
-    <div class="nav-mobile-sub">
+    <div class="nav-mobile-sub" data-creations-nav>
       <a href="creations/geschwister.html">Geschwister</a>
       <a href="creations/torann.html">Torann</a>
     </div>
@@ -73,7 +73,7 @@
   <div class="container">
     <p class="eyebrow reveal">À venir</p>
     <h2 class="reveal">Prochaines dates</h2>
-    <div class="list-plain mt-lg reveal">
+    <div class="list-plain mt-lg reveal" data-agenda-list="upcoming">
       <div class="agenda-row">
         <span class="agenda-date">11 oct. 2026</span>
         <span>Automne Curieux — <em>Geschwister</em>, Hangar 107, Rouen (15h)</span>
@@ -93,7 +93,7 @@
   <div class="container">
     <p class="eyebrow reveal">Résidences</p>
     <h2 class="reveal">Geschwister &amp; Torann</h2>
-    <div class="list-plain mt-lg reveal">
+    <div class="list-plain mt-lg reveal" data-agenda-list="residence">
       <div class="agenda-row"><span class="agenda-date">12 – 25 avril 2027</span><span><em>Torann</em> — Lisière</span><span class="agenda-place">Lisière</span></div>
       <div class="agenda-row"><span class="agenda-date">17 – 21 août 2026</span><span><em>Torann</em> — Les Moulins de Paillard, Pays de la Loire</span><span class="agenda-place">Pays de la Loire</span></div>
       <div class="agenda-row"><span class="agenda-date">20 – 24 juil. 2026</span><span><em>Torann</em> — École Municipale Artistique, Vitry-sur-Seine</span><span class="agenda-place">Vitry-sur-Seine</span></div>
@@ -110,7 +110,7 @@
   <div class="container">
     <p class="eyebrow reveal">Diffusion — Geschwister</p>
     <h2 class="reveal">En tournée</h2>
-    <div class="list-plain mt-lg reveal">
+    <div class="list-plain mt-lg reveal" data-agenda-list="diffusion">
       <div class="agenda-row"><span class="agenda-date">11 oct. 2026</span><span>Automne Curieux — Hangar 107, Rouen (15h)</span></div>
       <div class="agenda-row"><span class="agenda-date">09 mai 2026</span><span>Théâtre du Gai Savoir, Lyon</span></div>
       <div class="agenda-row"><span class="agenda-date">28 avril 2026</span><span>Festival journées Émergence — Historial Jeanne d’Arc, Rouen</span></div>
@@ -184,5 +184,7 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
+<script src="assets/js/agenda.js"></script>
+<script src="assets/js/cms-content.js"></script>
 </body>
 </html>
