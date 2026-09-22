@@ -301,6 +301,7 @@ h3{ font-size:clamp(1.3rem,2.4vw,1.7rem); margin-bottom:.4em; }
 .strip img{ height:clamp(220px,38vw,380px); width:auto; scroll-snap-align:start; flex:0 0 auto; }
 .strip::-webkit-scrollbar{ height:6px; }
 .strip::-webkit-scrollbar-thumb{ background:var(--brand); }
+[data-creation-gallery].grid > img{ width:100%; aspect-ratio:16/9; object-fit:cover; }
 
 .list-plain{ display:flex; flex-direction:column; }
 .list-plain > *{ border-top:1px solid rgba(0,0,0,.12); padding-block:1.1rem; }

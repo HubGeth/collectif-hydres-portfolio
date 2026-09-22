@@ -47,7 +47,7 @@ fetch('/api/index.php?action=public-content')
     document.querySelectorAll('.nav-dropdown-inner, .nav-mobile-sub').forEach(menu => {
       menu.replaceChildren(...creations.map(creation => {
         const link = document.createElement('a');
-        link.href = `${base}creation.html?slug=${encodeURIComponent(creation.slug)}`;
+        link.href = (creation.legacy || ['geschwister', 'torann'].includes(creation.slug)) ? `${base}creations/${creation.slug}.html` : `${base}creation.html?slug=${encodeURIComponent(creation.slug)}`;
         link.textContent = document.documentElement.lang === 'en' ? (creation.titleEn || creation.titleFr) : creation.titleFr;
         return link;
       }));

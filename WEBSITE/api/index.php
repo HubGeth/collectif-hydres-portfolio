@@ -91,7 +91,7 @@ function pageContent(array $input, array $current): array {
     foreach (($input['creations'] ?? $current['creations'] ?? []) as $item) {
         $slug = preg_replace('/[^a-z0-9-]/', '', strtolower(clean((string)($item['slug'] ?? ''), 80)));
         if (!$slug) continue;
-        $creation = ['id' => clean((string)($item['id'] ?? ''), 64) ?: bin2hex(random_bytes(12)), 'slug' => $slug];
+        $creation = ['id' => clean((string)($item['id'] ?? ''), 64) ?: bin2hex(random_bytes(12)), 'slug' => $slug, 'legacy' => !empty($item['legacy']) || in_array($slug, ['geschwister', 'torann'], true)];
         foreach (['titleFr','titleEn','metaFr','metaEn','introFr','introEn','bodyFr','bodyEn','hero'] as $field) $creation[$field] = clean((string)($item[$field] ?? ''), 5000);
         $creation['photos'] = array_values(array_filter(array_map(fn($url) => clean((string)$url, 240), $item['photos'] ?? [])));
         if ($creation['titleFr']) $result['creations'][] = $creation;
