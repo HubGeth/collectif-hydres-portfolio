@@ -58,7 +58,11 @@ function content(string $path): array {
         if (!is_dir(dirname($path)) || !copy($seed, $path)) reply(['error' => 'Stockage indisponible.'], 500);
     }
     $value = json_decode((string) file_get_contents($path), true);
-    return is_array($value) ? $value + ['events' => [], 'media' => []] : ['events' => [], 'media' => []];
+    $defaults = json_decode((string) file_get_contents(__DIR__ . '/default-content.json'), true);
+    $defaults = is_array($defaults) ? $defaults : ['events' => [], 'media' => [], 'creations' => [], 'collectivePhotos' => [], 'mediationHosts' => []];
+    // Migration non destructive : les installations créées avant les nouveaux
+    // modules reçoivent leurs contenus initiaux sans perdre agenda ou médias.
+    return is_array($value) ? $value + $defaults : $defaults;
 }
 function saveContent(string $path, array $content): void {
     $tmp = $path . '.tmp';
